@@ -1,6 +1,9 @@
+import { MainLayout } from '../layout';
+
 
 export const ServicesPage = () => {
   return (
-    <h1>ServicesPage</h1>
+    <MainLayout title='Nuestros Servicios'>
+    </MainLayout>
   );
 }

@@ -1,6 +1,9 @@
+import { MainLayout } from '../layout';
+
 
 export const ProductsPage = () => {
   return (
-    <h1>ProductsPage</h1>
+    <MainLayout title='Nuestros Productos'>
+    </MainLayout>
   );
 }

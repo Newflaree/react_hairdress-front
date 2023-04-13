@@ -1,6 +1,9 @@
+import { MainLayout } from '../layout';
+
 
 export const ContactPage = () => {
   return (
-    <h1>ContactPage</h1>
+    <MainLayout title='Contáctanos'>
+    </MainLayout>
   );
 }
