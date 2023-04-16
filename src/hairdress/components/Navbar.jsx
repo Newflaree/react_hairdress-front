@@ -1,6 +1,12 @@
+import { Link, useLocation } from 'react-router-dom';
+
  
 export const Navbar = () => {
-  const isLogged = true;
+  const location = useLocation();
+
+  const isLinkActive = ( linkPath ) => {
+    return location.pathname === linkPath;
+  }
 
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-4'>
@@ -24,16 +30,36 @@ export const Navbar = () => {
           { /* Navbar */ }
           <ul className='navbar-nav me-auto mb-2 mb-lg-0 mx-2'>
             <li className='nav-item'>
-              <a className='nav-link'>Inicio</a>
+              <Link
+                className={ `nav-link ${ isLinkActive( '/' ) ? 'active' : '' }` }
+                to='/'
+              >
+                Inicio
+              </Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link'>Productos</a>
+              <Link
+                className={ `nav-link ${ isLinkActive( '/products' ) ? 'active' : '' }` }
+                to='/products'
+              >
+                Productos
+              </Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link'>Servicios</a>
+              <Link
+                className={ `nav-link ${ isLinkActive( '/services' ) ? 'active' : '' }` }
+                to='/services'
+              >
+                Servicios
+              </Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link'>Contacto</a>
+              <Link
+                className={ `nav-link ${ isLinkActive( '/contact' ) ? 'active' : '' }` }
+                to='/contact'
+              >
+                Contacto
+              </Link>
             </li>
           </ul>
           { /* Navbar */ }
