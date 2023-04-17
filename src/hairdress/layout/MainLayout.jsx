@@ -1,4 +1,8 @@
-import { Footer, Navbar, Title } from '../components';
+import {
+  Footer,
+  Navbar,
+  Title
+} from "../components/ui";
 
 export const MainLayout = ({ children, title }) => {
   return (

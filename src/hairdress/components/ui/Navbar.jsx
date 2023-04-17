@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import { menu } from '../../../test-data';
 
  
 export const Navbar = () => {
@@ -29,38 +30,18 @@ export const Navbar = () => {
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
           { /* Navbar */ }
           <ul className='navbar-nav me-auto mb-2 mb-lg-0 mx-2'>
-            <li className='nav-item'>
-              <Link
-                className={ `nav-link ${ isLinkActive( '/' ) ? 'active' : '' }` }
-                to='/'
-              >
-                Inicio
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                className={ `nav-link ${ isLinkActive( '/products' ) ? 'active' : '' }` }
-                to='/products'
-              >
-                Productos
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                className={ `nav-link ${ isLinkActive( '/services' ) ? 'active' : '' }` }
-                to='/services'
-              >
-                Servicios
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                className={ `nav-link ${ isLinkActive( '/contact' ) ? 'active' : '' }` }
-                to='/contact'
-              >
-                Contacto
-              </Link>
-            </li>
+            {
+              menu.map( ({ name, url }) => (
+                <li className='nav-item' key={ name }>
+                  <Link
+                    className={ `nav-link ${ isLinkActive( url ) ? 'active' : '' }` }
+                    to={ url }
+                  >
+                    { name }
+                  </Link>
+                </li>
+              ))
+            }
           </ul>
           { /* Navbar */ }
 
